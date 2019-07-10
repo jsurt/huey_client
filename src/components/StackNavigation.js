@@ -46,11 +46,11 @@ const AppNavigator_1 = createStackNavigator(
 const styles = StyleSheet.create({
   containerHomeScreen: {
     flex: 1,
-    background: "grey"
+    backgroundColor: "grey"
   },
   containerOtherScreen: {
     flex: 1,
-    background: "blue"
+    backgroundColor: "blue"
   },
   textStyles: {
     fontSize: 24
