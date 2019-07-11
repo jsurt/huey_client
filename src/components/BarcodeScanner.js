@@ -45,8 +45,8 @@ class BarcodeScanner extends PureComponent {
           onCameraReady={() => console.log("Camera ready")}
           onBarCodeRead={e => {
             if (!this.state.isBarCodeRead) {
-              this.setState({ isBarCodeRead: true });
               console.log("BarCode detected");
+              this.setState({ isBarCodeRead: true });
               this.onBarCodeRead(e.data);
             }
             return null;
@@ -75,40 +75,19 @@ class BarcodeScanner extends PureComponent {
     }
   };
 
-  onBarCodeRead = data => {
+  onBarCodeRead = async data => {
     if (this.camera) {
       const barcode = data;
-      this.fetchByISBN(barcode);
-    }
-  };
-
-  nameToUpperCase = name => {
-    return name.toUpperCase();
-  };
-
-  fetchByISBN = barcode => {
-    console.log(barcode);
-    axios(BOOK_DATA_ENDPOINT + "/oclc/" + barcode)
-      .then(res => {
-        parseString(
-          res.data,
-          {
-            attrNameProcessors: [this.nameToUpperCase],
-            attrValueProcessors: [this.nameToUpperCase]
-          },
-          (err, result) => {
-            console.log(result);
-          }
-        );
-      })
-      .catch(err => {
-        Alert.alert("Sorry, title not found. Try entering manually");
-        console.error(err);
-      })
-      .finally(() => {
-        Alert.alert("Scan complete");
-        this.setState({ isBarCodeRead: false });
+      const bookInfo = await axios(BOOK_DATA_ENDPOINT + "/isbn_db/" + barcode);
+      console.log(bookInfo.data.data[0].title);
+      const { title, image } = bookInfo.data.data[0];
+      console.log(image);
+      this.props.navigation.navigate("NewBook", {
+        title,
+        image
       });
+      this.setState({ isBarCodeRead: false });
+    }
   };
 }
 
