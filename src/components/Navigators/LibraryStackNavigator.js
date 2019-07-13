@@ -2,7 +2,7 @@
 import React from "react";
 import { View, Text, Button, StyleSheet, Image } from "react-native";
 import { createStackNavigator, createAppContainer } from "react-navigation";
-import { styles } from "./HomeStackNavigator";
+import { styles } from "./ProfileStackNavigator";
 import BarCodeScanner from "../BarcodeScanner";
 
 class EntireLibraryScreen extends React.Component {
