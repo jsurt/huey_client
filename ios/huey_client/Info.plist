@@ -37,6 +37,12 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Huey would like to access the camera</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Message for getting access to camera roll for iOS >= 11</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Message for getting access to camera roll for iOS >= 10</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>UILaunchStoryboardName</key>
