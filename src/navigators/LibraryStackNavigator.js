@@ -1,9 +1,13 @@
 "use strict";
 import React from "react";
 import { View, Text, Button, StyleSheet, Image } from "react-native";
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import {
+  createStackNavigator,
+  createBottomTabNavigator,
+  createAppContainer
+} from "react-navigation";
 import { styles } from "./ProfileStackNavigator";
-import BarCodeScanner from "../BarcodeScanner";
+import BarcodeScanner from "../components/BarcodeScanner";
 
 class EntireLibraryScreen extends React.Component {
   static navigationOptions = {
@@ -87,16 +91,23 @@ class NewBookScanned extends React.Component {
   }
 }
 
-const LibraryStack = createStackNavigator(
+const LibraryTabNavigator = createBottomTabNavigator(
   {
     Overview: EntireLibraryScreen,
     Details: LibraryDetails,
-    BarCodeScanner: BarCodeScanner,
+    BarcodeScanner: BarcodeScanner,
     NewBook: NewBookScanned
+  },
+  {
+    tabBarOptions: {
+      style: {
+        height: 25
+      }
+    }
   },
   {
     initialRouteName: "Overview"
   }
 );
 
-export default createAppContainer(LibraryStack);
+export default createAppContainer(LibraryTabNavigator);

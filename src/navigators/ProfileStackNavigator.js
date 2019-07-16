@@ -84,7 +84,7 @@ export const styles = StyleSheet.create({
     backgroundColor: "white"
   },
   profileInfoContainer: {
-    backgroundColor: "#999999"
+    backgroundColor: "white"
   },
   textStyles: {
     textAlign: "center",
