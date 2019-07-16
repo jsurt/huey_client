@@ -1,7 +1,7 @@
 "use strict";
 import React from "react";
 import { View, Text, Button, StyleSheet, Image } from "react-native";
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import { createStackNavigator, createBottomTabNavigator, createAppContainer } from "react-navigation";
 import { styles } from "./ProfileStackNavigator";
 import BarCodeScanner from "../BarcodeScanner";
 
@@ -87,7 +87,14 @@ class NewBookScanned extends React.Component {
   }
 }
 
-const LibraryStack = createStackNavigator(
+const LibraryStack = createBottomTabNavigator(
+  // {
+  //   tabBarOptions: {
+  //     style: {
+  //       height: 30
+  //     }
+  //   }
+  // },
   {
     Overview: EntireLibraryScreen,
     Details: LibraryDetails,

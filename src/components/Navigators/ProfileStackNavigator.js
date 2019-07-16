@@ -1,7 +1,7 @@
 "use strict";
 import React from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import { createStackNavigator, createBottomTabNavigator, createAppContainer } from "react-navigation";
 
 class ProfileScreen extends React.Component {
   static navigationOptions = {
@@ -20,14 +20,16 @@ class ProfileScreen extends React.Component {
         }}
       >
         <View style={styles.profileInfoContainer}>
-          <Text style={styles.textStyles}>John Doe</Text>
-          <Text style={styles.textStyles}>jdoe@example.com</Text>
+          <Text style={styles.textStyles}>Lorem ipsum</Text>
+          <Text style={styles.textStyles}>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Text>
         </View>
-        <Button
-          title="Edit Profile"
-          style={styles.btnStyles}
-          onPress={() => this.props.navigation.navigate("EditProfile")}
-        />
+        <View style={{flex: 2, justifyContent: "space-evenly", alignContent: "center"}}>
+          <Button
+            title="Edit Profile"
+            style={styles.btnStyles}
+            onPress={() => this.props.navigation.navigate("EditProfile")}
+          />
+        </View>
       </View>
     );
   }
@@ -52,7 +54,7 @@ class EditProfileScreen extends React.Component {
         <Text style={styles.textStyles}>Editing profile...</Text>
         <Button
           title="Save"
-          style={styles.btnStyles}
+          style={{...styles.btnStyles, flex: 1}}
           onPress={() => this.props.navigation.navigate("Profile")}
         />
       </View>
@@ -60,7 +62,7 @@ class EditProfileScreen extends React.Component {
   }
 }
 
-const ProfileStack = createStackNavigator(
+const ProfileStack = createBottomTabNavigator(
   {
     Profile: ProfileScreen,
     EditProfile: EditProfileScreen
@@ -84,7 +86,8 @@ export const styles = StyleSheet.create({
     backgroundColor: "white"
   },
   profileInfoContainer: {
-    backgroundColor: "#999999"
+    flex: 3,
+    justifyContent: "space-evenly"
   },
   textStyles: {
     textAlign: "center",
