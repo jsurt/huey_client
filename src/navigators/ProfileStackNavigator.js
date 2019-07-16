@@ -86,8 +86,7 @@ export const styles = StyleSheet.create({
     backgroundColor: "white"
   },
   profileInfoContainer: {
-    flex: 3,
-    justifyContent: "space-evenly"
+    backgroundColor: "white"
   },
   textStyles: {
     textAlign: "center",
