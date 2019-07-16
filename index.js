@@ -3,7 +3,7 @@
  */
 
 import { AppRegistry } from "react-native";
-import TabNavigator from "./src/navigators/TabNavigator";
+import MainNavigator from "./src/navigators/MainNavigator";
 import { name as appName } from "./app.json";
 
-AppRegistry.registerComponent(appName, () => TabNavigator);
+AppRegistry.registerComponent(appName, () => MainNavigator);

@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, TextInput, Button } from "react-native";
-import { AuthButton } from "./components/AuthButton";
+import { AuthButton } from "../components/AuthButton";
 
 class componentName extends Component {
   constructor(props) {

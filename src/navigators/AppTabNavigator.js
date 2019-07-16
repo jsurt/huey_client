@@ -4,7 +4,7 @@ import { createBottomTabNavigator, createAppContainer } from "react-navigation";
 import ProfileStack from "./ProfileStackNavigator";
 import LibraryTabNavigator from "./LibraryStackNavigator";
 
-const TabNavigator = createBottomTabNavigator(
+const AppTabNavigator = createBottomTabNavigator(
   {
     Profile: ProfileStack,
     Library: LibraryTabNavigator
@@ -18,4 +18,4 @@ const TabNavigator = createBottomTabNavigator(
   }
 );
 
-export default createAppContainer(TabNavigator);
+export default createAppContainer(AppTabNavigator);

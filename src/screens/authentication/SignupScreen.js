@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, TextInput } from "react-native";
-import { AuthButton } from "./components/AuthButton";
+import { AuthButton } from "../components/AuthButton";
 
 class SignupScreen extends Component {
   render() {
