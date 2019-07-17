@@ -1,11 +1,11 @@
 import { createSwitchNavigator, createAppContainer } from "react-navigation";
-import AuthNavigator from "./AuthNavigator";
+import AuthStackNavigator from "./AuthNavigator";
 import AppTabNavigator from "./AppTabNavigator";
 // Need to make loading screen
 
 const MainNavigator = createSwitchNavigator(
   {
-    Auth: AuthNavigator,
+    Auth: AuthStackNavigator,
     App: AppTabNavigator
   },
   {
@@ -13,4 +13,6 @@ const MainNavigator = createSwitchNavigator(
   }
 );
 
-export default MainNavigator;
+const App =  createAppContainer(MainNavigator)
+
+export default App;

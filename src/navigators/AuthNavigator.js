@@ -2,7 +2,7 @@ import { createStackNavigator, createAppContainer } from "react-navigation";
 import LoginScreen from "../screens/authentication/LoginScreen";
 import SignupScreen from "../screens/authentication/SignupScreen";
 
-const authStackNavigator = createStackNavigator(
+const AuthStackNavigator = createStackNavigator(
   {
     Login: LoginScreen,
     Signup: SignupScreen
@@ -12,4 +12,4 @@ const authStackNavigator = createStackNavigator(
   }
 );
 
-export default createAppContainer(authStackNavigator);
+export default createAppContainer(AuthStackNavigator);

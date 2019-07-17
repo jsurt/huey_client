@@ -1,8 +1,24 @@
 import React from "react";
 import { View, Text, TextInput } from "react-native";
-import { AuthButton } from "../components/AuthButton";
+import AuthButton from "../../components/AuthButton";
 
-class SignupScreen extends Component {
+class SignupScreen extends React.Component {
+  static navigationOptions = {
+    title: "Create Account",
+    headerStyle: {
+      backgroundColor: "black"
+    },
+    headerTintColor: "#fff"
+  };
+
+  handleLogin() {
+    this.props.navigation.navigate("App");
+  }
+
+  goToLogin() {
+    this.props.navigation.navigate("Login");
+  }
+
   render() {
     return (
       <View>
@@ -14,7 +30,8 @@ class SignupScreen extends Component {
           <TextInput placeholder="Password" />
           <TextInput placeholder="Confirm Password" />
         </View>
-        <AuthButton btnTitle={"Create Account"} />
+        <AuthButton onPress={this.handleLogin.bind(this)} btnTitle={"Create Account"} />
+        <AuthButton onPress={this.goToLogin.bind(this)} btnTitle={"Login"} />
       </View>
     );
   }

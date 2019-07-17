@@ -50,7 +50,7 @@ class LibraryDetails extends React.Component {
         <Button
           title="Scan a Book"
           styles={styles.btnStyles}
-          onPress={() => this.props.navigation.navigate("BarCodeScanner")}
+          onPress={() => this.props.navigation.navigate("BarcodeScanner")}
         />
       </View>
     );

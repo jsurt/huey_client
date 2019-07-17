@@ -1,15 +1,33 @@
 import React from "react";
 import { View, Text, TextInput, Button } from "react-native";
-import { AuthButton } from "../components/AuthButton";
+import AuthButton from "../../components/AuthButton";
 
-class componentName extends Component {
+class LoginScreen extends React.Component {
+  static navigationOptions = {
+    title: "Login",
+    headerStyle: {
+      backgroundColor: "black"
+    },
+    headerTintColor: "#fff"
+  };
+
   constructor(props) {
     super(props);
     this.state = {
       username: "",
       password: ""
     };
+
   }
+
+  handleLogin() {
+    this.props.navigation.navigate("App");
+  }
+
+  goToSignup() {
+    this.props.navigation.navigate("Signup");
+  }
+
   render() {
     return (
       <View>
@@ -24,10 +42,11 @@ class componentName extends Component {
           onChangeText={text => this.setState({ password: text })}
           value={this.state.password}
         />
-        <AuthButton btnTitle={"Login"} />
+        <AuthButton onPress={this.handleLogin.bind(this)} btnTitle={"Login"} />
+        <AuthButton onPress={this.goToSignup.bind(this)} btnTitle={"Create Account"} />
       </View>
     );
   }
 }
 
-export default componentName;
+export default LoginScreen;
