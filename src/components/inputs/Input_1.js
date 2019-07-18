@@ -7,6 +7,7 @@ const Input_1 = props => {
       style={styles.general}
       placeholder={props.placeholder}
       onChangeText={props.onChangeText}
+      value={props.value}
     />
   );
 };

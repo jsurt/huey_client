@@ -10,9 +10,23 @@ class ConfirmNewBookScreen extends React.Component {
     this.props.navigation.navigate("Main");
   }
   render() {
+    const { navigation } = this.props;
+    const title = navigation.getParam("title", "No Title Found");
+    const authors = navigation.getParam("authors", "No Authors Found");
+    const publishedDate = navigation.getParam(
+      "publishedDate",
+      "Published Date Not Found"
+    );
+    const description = navigation.getParam(
+      "description",
+      "Book Description Not Found"
+    );
     return (
       <View style={styles.wrapper}>
         <View style={styles.textWrapper}>
+          <Text>Title: {title}</Text>
+          <Text>Author(s): {authors}</Text>
+          <Text>Publish Date: {publishedDate}</Text>
           <Text
             style={{
               textAlign: "center",

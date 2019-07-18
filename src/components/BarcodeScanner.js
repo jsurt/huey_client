@@ -82,7 +82,7 @@ class BarcodeScanner extends PureComponent {
       console.log(bookInfo.data.data[0].title);
       const { title, image } = bookInfo.data.data[0];
       console.log(image);
-      this.props.navigation.navigate("NewBook", {
+      this.props.navigation.navigate("Confirmation", {
         title,
         image
       });
