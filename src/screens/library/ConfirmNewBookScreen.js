@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Button_1 from "../../components/buttons/Button_1";
+import RetrievedBook from "../../components/RetrievedBook";
 
 class ConfirmNewBookScreen extends React.Component {
   handleBookIsCorrect() {
@@ -11,22 +12,16 @@ class ConfirmNewBookScreen extends React.Component {
   }
   render() {
     const { navigation } = this.props;
-    const title = navigation.getParam("title", "No Title Found");
-    const authors = navigation.getParam("authors", "No Authors Found");
-    const publishedDate = navigation.getParam(
-      "publishedDate",
-      "Published Date Not Found"
-    );
-    const description = navigation.getParam(
-      "description",
-      "Book Description Not Found"
-    );
+    const infoArr = navigation.getParam("bookDataArr", "No Data Found");
+    console.log(infoArr);
+    const retrievedBooks = infoArr.map((book, i) => {
+      <RetrievedBook title={infoArr[i].title} authors={infoArr[i].authors} publishedDate={infoArr[i].publishedDate}/>
+    });
+    console.log(retrievedBooks);
     return (
       <View style={styles.wrapper}>
         <View style={styles.textWrapper}>
-          <Text>Title: {title}</Text>
-          <Text>Author(s): {authors}</Text>
-          <Text>Publish Date: {publishedDate}</Text>
+          {retrievedBooks}
           <Text
             style={{
               textAlign: "center",
