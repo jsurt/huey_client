@@ -3,6 +3,7 @@ import { View, Text, FlatList, Image, StyleSheet } from "react-native";
 import Button_1 from "../../components/buttons/Button_1";
 import Input_1 from "../../components/inputs/Input_1";
 import RetrievedBook from "../../components/RetrievedBook";
+import RetrievedBooksThumbnails from "../../components/RetrievedBooksThumbnails";
 
 class ConfirmNewBookScreen extends React.Component {
   constructor(props) {
@@ -29,35 +30,24 @@ class ConfirmNewBookScreen extends React.Component {
       thumbnails
     });
   }
+
   handleBookIsCorrect() {
     this.props.navigation.navigate("Main");
   }
+
   handleBookIsNotCorrect() {
     this.props.navigation.navigate("Main");
   }
+
   render() {
     const { navigation } = this.props;
     // console.log(this.state.thumbnails);
     // MAKE THE FLATLIST AND OTHER THINGS COMPONENTS
     return (
       <View style={styles.wrapper}>
-        <View>
+        <View style={styles.infoWrapper}>
           <View>
-            <FlatList
-              data={this.state.thumbnails}
-              renderItem={({ item }) => {
-                console.log(item.src);
-                return (
-                  <View>
-                    <Image
-                      source={{ uri: item.src }}
-                      style={{ width: 51, height: 75 }}
-                    />
-                  </View>
-                );
-              }}
-              horizontal={true}
-            />
+            <RetrievedBooksThumbnails data={this.state.thumbnails} />
           </View>
           <Input_1 value={this.state.title} />
           <Input_1 value={this.state.authors} />
@@ -84,7 +74,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column"
   },
-  textWrapper: {
+  infoWrapper: {
     flex: 1,
     justifyContent: "center"
   },

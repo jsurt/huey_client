@@ -30,18 +30,6 @@ class BarcodeScanner extends PureComponent {
           style={styles.preview}
           type={RNCamera.Constants.Type.back}
           flashMode={RNCamera.Constants.FlashMode.auto}
-          androidCameraPermissionOptions={{
-            title: "Permission to use camera",
-            message: "We need your permission to use your camera",
-            buttonPositive: "Ok",
-            buttonNegative: "Cancel"
-          }}
-          androidRecordAudioPermissionOptions={{
-            title: "Permission to use audio recording",
-            message: "We need your permission to use your audio",
-            buttonPositive: "Ok",
-            buttonNegative: "Cancel"
-          }}
           onCameraReady={() => console.log("Camera ready")}
           onBarCodeRead={e => {
             if (!this.state.isBarCodeRead) {
@@ -53,16 +41,6 @@ class BarcodeScanner extends PureComponent {
           }}
           captureAudio={false}
         />
-        <View
-          style={{ flex: 0, flexDirection: "row", justifyContent: "center" }}
-        >
-          <TouchableOpacity
-            onPress={this.takePicture.bind(this)}
-            style={styles.capture}
-          >
-            <Text style={{ fontSize: 14 }}> SNAP </Text>
-          </TouchableOpacity>
-        </View>
       </View>
     );
   }
@@ -93,6 +71,8 @@ class BarcodeScanner extends PureComponent {
 
 const styles = StyleSheet.create({
   container: {
+    width: "100%",
+    height: "100%",
     flex: 1,
     flexDirection: "column",
     backgroundColor: "black"

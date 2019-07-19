@@ -32,7 +32,7 @@ class AddBookScreen extends React.Component {
     });
   }
   fetchBookByTitle(title) {
-    return fetch(`${BOOK_DATA_ENDPOINT}/google-books/${title}`)
+    return fetch(`${BOOK_DATA_ENDPOINT}/google-books/title/${title}`)
       .then(res => res.json())
       .then(json => {
         return json;
