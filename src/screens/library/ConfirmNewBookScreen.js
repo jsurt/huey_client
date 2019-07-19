@@ -1,9 +1,34 @@
 import React from "react";
 import { View, Text, FlatList, StyleSheet } from "react-native";
 import Button_1 from "../../components/buttons/Button_1";
+import Input_1 from "../../components/inputs/Input_1";
 import RetrievedBook from "../../components/RetrievedBook";
 
 class ConfirmNewBookScreen extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: "",
+      authors: "",
+      thumbnails: []
+    };
+  }
+  componentDidMount() {
+    const title = this.props.navigation.getParam("title", "No title found");
+    const authors = this.props.navigation.getParam(
+      "authors",
+      "No authors found"
+    );
+    const thumbnails = this.props.navigation.getParam(
+      "thumbnails",
+      "No thumbnails found"
+    );
+    this.setState({
+      title,
+      authors,
+      thumbnails
+    });
+  }
   handleBookIsCorrect() {
     this.props.navigation.navigate("Main");
   }
@@ -12,41 +37,20 @@ class ConfirmNewBookScreen extends React.Component {
   }
   render() {
     const { navigation } = this.props;
-    const infoArr = navigation.getParam("bookDataArr", "No Data Found");
-    console.log(infoArr);
-    // const retrievedBooks = infoArr.map((book, i) => {
-    //   return <RetrievedBook title={infoArr[i].title} authors={infoArr[i].authors} publishedDate={infoArr[i].publishedDate}/>
-    // });
-    // console.log(retrievedBooks, "Retrieved books");
     return (
       <View style={styles.wrapper}>
-        <View style={styles.textWrapper}>
-          <FlatList data={infoArr} renderItem={({item}) => {
-            return (
-              <View>
-                <Text>{item.title}</Text>
-                <Text>{item.authors}</Text>
-                <Text>{item.publishedDate}</Text>
-              </View>
-              )
-          }} />
-          <Text
-            style={{
-              textAlign: "center",
-              fontSize: 16
-            }}
-          >
-            Is this correct?
-          </Text>
+        <View>
+          <Input_1 value={this.state.title} />
+          <Input_1 value={this.state.authors} />
         </View>
         <View style={{ flex: 1 }}>
           <View style={styles.buttonWrapper}>
             <Button_1
-              title={"Yes"}
+              title={"Add Book"}
               onPress={this.handleBookIsCorrect.bind(this)}
             />
             <Button_1
-              title={"No"}
+              title={"Discard"}
               onPress={this.handleBookIsNotCorrect.bind(this)}
             />
           </View>
