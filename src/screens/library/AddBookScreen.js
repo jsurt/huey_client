@@ -19,6 +19,7 @@ class AddBookScreen extends React.Component {
     let data = await this.fetchBookByTitle(this.state.title);
     console.log(data.items[0].volumeInfo);
     let bookDataArr = [];
+    console.log(data.items.length);
     for (let i = 0; i < data.items.length; i++) {
       let book = {};
       let {
@@ -27,12 +28,13 @@ class AddBookScreen extends React.Component {
         publishedDate,
         description
       } = data.items[i].volumeInfo;
+      book.key = (i + 1).toString();
       book.title = title;
       book.authors = authors;
       book.publishedDate = publishedDate;
       bookDataArr[i] = book;
     }
-    console.log(bookDataArr);
+    // console.log(bookDataArr);
     this.props.navigation.navigate("Confirmation", { bookDataArr });
   }
   fetchBookByTitle(title) {

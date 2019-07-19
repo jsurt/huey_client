@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, FlatList, StyleSheet } from "react-native";
 import Button_1 from "../../components/buttons/Button_1";
 import RetrievedBook from "../../components/RetrievedBook";
 
@@ -14,14 +14,22 @@ class ConfirmNewBookScreen extends React.Component {
     const { navigation } = this.props;
     const infoArr = navigation.getParam("bookDataArr", "No Data Found");
     console.log(infoArr);
-    const retrievedBooks = infoArr.map((book, i) => {
-      <RetrievedBook title={infoArr[i].title} authors={infoArr[i].authors} publishedDate={infoArr[i].publishedDate}/>
-    });
-    console.log(retrievedBooks);
+    // const retrievedBooks = infoArr.map((book, i) => {
+    //   return <RetrievedBook title={infoArr[i].title} authors={infoArr[i].authors} publishedDate={infoArr[i].publishedDate}/>
+    // });
+    // console.log(retrievedBooks, "Retrieved books");
     return (
       <View style={styles.wrapper}>
         <View style={styles.textWrapper}>
-          {retrievedBooks}
+          <FlatList data={infoArr} renderItem={({item}) => {
+            return (
+              <View>
+                <Text>{item.title}</Text>
+                <Text>{item.authors}</Text>
+                <Text>{item.publishedDate}</Text>
+              </View>
+              )
+          }} />
           <Text
             style={{
               textAlign: "center",
