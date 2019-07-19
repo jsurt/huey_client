@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, FlatList, StyleSheet } from "react-native";
+import { View, Text, FlatList, Image, StyleSheet } from "react-native";
 import Button_1 from "../../components/buttons/Button_1";
 import Input_1 from "../../components/inputs/Input_1";
 import RetrievedBook from "../../components/RetrievedBook";
@@ -20,7 +20,7 @@ class ConfirmNewBookScreen extends React.Component {
       "No authors found"
     );
     const thumbnails = this.props.navigation.getParam(
-      "thumbnails",
+      "thumbnailsArr",
       "No thumbnails found"
     );
     this.setState({
@@ -37,9 +37,28 @@ class ConfirmNewBookScreen extends React.Component {
   }
   render() {
     const { navigation } = this.props;
+    // console.log(this.state.thumbnails);
+    // MAKE THE FLATLIST AND OTHER THINGS COMPONENTS
     return (
       <View style={styles.wrapper}>
         <View>
+          <View>
+            <FlatList
+              data={this.state.thumbnails}
+              renderItem={({ item }) => {
+                console.log(item.src);
+                return (
+                  <View>
+                    <Image
+                      source={{ uri: item.src }}
+                      style={{ width: 51, height: 75 }}
+                    />
+                  </View>
+                );
+              }}
+              horizontal={true}
+            />
+          </View>
           <Input_1 value={this.state.title} />
           <Input_1 value={this.state.authors} />
         </View>

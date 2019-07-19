@@ -18,10 +18,17 @@ class AddBookScreen extends React.Component {
   async handleSearchTitle() {
     let data = await this.fetchBookByTitle(this.state.title);
     const { title, authors, thumbnails } = data;
+    let thumbnailsArr = [];
+    thumbnails.forEach((thumbnail, i) => {
+      let newObj = {};
+      newObj.src = thumbnail;
+      newObj.key = (i + 1).toString();
+      thumbnailsArr.push(newObj);
+    });
     this.props.navigation.navigate("Confirmation", {
       title,
       authors,
-      thumbnails
+      thumbnailsArr
     });
   }
   fetchBookByTitle(title) {
