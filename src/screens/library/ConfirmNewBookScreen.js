@@ -41,8 +41,6 @@ class ConfirmNewBookScreen extends React.Component {
 
   render() {
     const { navigation } = this.props;
-    // console.log(this.state.thumbnails);
-    // MAKE THE FLATLIST AND OTHER THINGS COMPONENTS
     return (
       <View style={styles.wrapper}>
         <View style={styles.infoWrapper}>
