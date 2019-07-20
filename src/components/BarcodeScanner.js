@@ -10,8 +10,8 @@ import {
 } from "react-native";
 import { RNCamera } from "react-native-camera";
 import axios from "axios";
-import { parseString } from "react-native-xml2js";
 import { BOOK_DATA_ENDPOINT } from "../../config";
+import { fetchByISBN } from "../requests/books";
 
 class BarcodeScanner extends PureComponent {
   constructor(props) {
@@ -55,16 +55,14 @@ class BarcodeScanner extends PureComponent {
 
   onBarCodeRead = async data => {
     if (this.camera) {
-      const barcode = data;
-      const bookInfo = await axios(BOOK_DATA_ENDPOINT + "/isbn_db/" + barcode);
-      console.log(bookInfo.data.data[0].title);
-      const { title, image } = bookInfo.data.data[0];
-      console.log(image);
+      const bookInfo = await fetchByISBN(data);
+      const { title, authors, thumbnails } = data;
+      this.setState({ isBarCodeRead: false });
       this.props.navigation.navigate("Confirmation", {
         title,
-        image
+        authors,
+        thumbnails
       });
-      this.setState({ isBarCodeRead: false });
     }
   };
 }

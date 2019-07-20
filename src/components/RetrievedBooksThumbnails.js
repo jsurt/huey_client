@@ -7,7 +7,6 @@ class RetrievedBooksThumbnails extends React.Component {
       <FlatList
         data={this.props.data}
         renderItem={({ item }) => {
-          console.log(item.src);
           return (
             <View>
               <Image

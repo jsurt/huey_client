@@ -21,7 +21,7 @@ class ConfirmNewBookScreen extends React.Component {
       "No authors found"
     );
     const thumbnails = this.props.navigation.getParam(
-      "thumbnailsArr",
+      "thumbnails",
       "No thumbnails found"
     );
     this.setState({

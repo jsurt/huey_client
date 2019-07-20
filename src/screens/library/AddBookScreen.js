@@ -4,6 +4,7 @@ import Button_1 from "../../components/buttons/Button_1";
 import Input_1 from "../../components/inputs/Input_1";
 import axios from "axios";
 import { BOOK_DATA_ENDPOINT } from "../../../config";
+import { fetchByTitle } from "../../requests/books";
 
 class AddBookScreen extends React.Component {
   constructor(props) {
@@ -16,30 +17,13 @@ class AddBookScreen extends React.Component {
     this.props.navigation.navigate("ScanBook");
   }
   async handleSearchTitle() {
-    let data = await this.fetchBookByTitle(this.state.title);
+    let data = await fetchByTitle(this.state.title);
     const { title, authors, thumbnails } = data;
-    let thumbnailsArr = [];
-    thumbnails.forEach((thumbnail, i) => {
-      let newObj = {};
-      newObj.src = thumbnail;
-      newObj.key = (i + 1).toString();
-      thumbnailsArr.push(newObj);
-    });
     this.props.navigation.navigate("Confirmation", {
       title,
       authors,
-      thumbnailsArr
+      thumbnails
     });
-  }
-  fetchBookByTitle(title) {
-    return fetch(`${BOOK_DATA_ENDPOINT}/google-books/title/${title}`)
-      .then(res => res.json())
-      .then(json => {
-        return json;
-      })
-      .catch(err => {
-        console.error(err);
-      });
   }
   render() {
     return (
