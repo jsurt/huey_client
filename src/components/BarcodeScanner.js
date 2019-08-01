@@ -53,8 +53,9 @@ class BarcodeScanner extends PureComponent {
     }
   };
 
-  onBarCodeRead = async data => {
+  async onBarCodeRead(data) {
     if (this.camera) {
+      console.log(data);
       const bookInfo = await fetchByISBN(data);
       const { title, authors, thumbnails } = data;
       this.setState({ isBarCodeRead: false });
@@ -64,32 +65,19 @@ class BarcodeScanner extends PureComponent {
         thumbnails
       });
     }
-  };
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
-    height: "100%",
     flex: 1,
     flexDirection: "column",
     backgroundColor: "black"
   },
   preview: {
-    width: "100%",
-    height: "100%",
     flex: 1,
     justifyContent: "flex-end",
     alignItems: "center"
-  },
-  capture: {
-    flex: 0,
-    backgroundColor: "#fff",
-    borderRadius: 5,
-    padding: 15,
-    paddingHorizontal: 20,
-    alignSelf: "center",
-    margin: 20
   }
 });
 

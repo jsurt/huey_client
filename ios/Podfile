@@ -30,6 +30,8 @@ target 'huey_client' do
 
   pod 'react-native-camera', path: '../node_modules/react-native-camera'
 
+  pod 'Firebase/Analytics'
+
   target 'huey_clientTests' do
     inherit! :search_paths
     # Pods for testing
