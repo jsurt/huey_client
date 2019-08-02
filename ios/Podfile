@@ -31,6 +31,8 @@ target 'huey_client' do
   pod 'react-native-camera', path: '../node_modules/react-native-camera'
 
   pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Core', '~> 6.4.0'
 
   target 'huey_clientTests' do
     inherit! :search_paths
