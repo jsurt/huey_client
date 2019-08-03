@@ -34,6 +34,9 @@ target 'huey_client' do
   pod 'Firebase/Auth'
   pod 'Firebase/Core', '~> 6.4.0'
 
+  pod 'GoogleSignIn', '~> 4.4.0'
+  pod 'RNGoogleSignin', :path => '../node_modules/react-native-google-signin'
+
   target 'huey_clientTests' do
     inherit! :search_paths
     # Pods for testing
