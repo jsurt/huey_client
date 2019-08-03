@@ -14,6 +14,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1E0162DB22D67A6500F729D2 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E37DE1222D66DF3004F98AE /* libRNGestureHandler.a */; };
 		1E3B2E35E650877AC6EB4CB7 /* libPods-huey_client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CD88B05736BED72B5EB4F38 /* libPods-huey_client.a */; };
+		1E99222322F53CD6003E5C14 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E99222222F53CD6003E5C14 /* GoogleService-Info.plist */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -21,7 +22,6 @@
 		34275FCB80C07E5BC6D28C13 /* libPods-huey_client-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 643270563F2FF70F1B21F53A /* libPods-huey_client-tvOSTests.a */; };
 		3743F2B245023D82B579F01C /* libPods-huey_clientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47CFDB810BF5D1BE1A0F6346 /* libPods-huey_clientTests.a */; };
 		7C1C702BDAEAFAC7704A37DB /* libPods-huey_client-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6053FC3CDA65F0AF8E09DB28 /* libPods-huey_client-tvOS.a */; };
-		CE77DD5A22F3AE98008E6410 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE77DD5922F3AE98008E6410 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +70,7 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = huey_client/main.m; sourceTree = "<group>"; };
 		17A763C1332A08562C7BD9C9 /* Pods-huey_client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-huey_client.release.xcconfig"; path = "Target Support Files/Pods-huey_client/Pods-huey_client.release.xcconfig"; sourceTree = "<group>"; };
 		1E37DE0C22D66DF2004F98AE /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
+		1E99222222F53CD6003E5C14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1F6CC9B8FC81FA8931319A20 /* Pods-huey_client-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-huey_client-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-huey_client-tvOS/Pods-huey_client-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* huey_client-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "huey_client-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* huey_client-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "huey_client-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,7 +82,6 @@
 		6C33EC30A3BA75BE3798A625 /* Pods-huey_clientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-huey_clientTests.debug.xcconfig"; path = "Target Support Files/Pods-huey_clientTests/Pods-huey_clientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7CD88B05736BED72B5EB4F38 /* libPods-huey_client.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-huey_client.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA17749F77DF5E54580756C4 /* Pods-huey_client-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-huey_client-tvOS.release.xcconfig"; path = "Target Support Files/Pods-huey_client-tvOS/Pods-huey_client-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		CE77DD5922F3AE98008E6410 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D890C5A8F6C1209D8DE6E8AB /* Pods-huey_clientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-huey_clientTests.release.xcconfig"; path = "Target Support Files/Pods-huey_clientTests/Pods-huey_clientTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -144,7 +144,7 @@
 		13B07FAE1A68108700A75B9A /* huey_client */ = {
 			isa = PBXGroup;
 			children = (
-				CE77DD5922F3AE98008E6410 /* GoogleService-Info.plist */,
+				1E99222222F53CD6003E5C14 /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -405,7 +405,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				CE77DD5A22F3AE98008E6410 /* GoogleService-Info.plist in Resources */,
+				1E99222322F53CD6003E5C14 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -743,6 +743,7 @@
 					"\"${PODS_ROOT}/Headers/Public/yoga\"",
 				);
 				INFOPLIST_FILE = huey_client/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -764,6 +765,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = USWM6GCMZ8;
 				INFOPLIST_FILE = huey_client/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",

@@ -44,9 +44,9 @@ class ConfirmNewBookScreen extends React.Component {
     return (
       <View style={styles.wrapper}>
         <View style={styles.infoWrapper}>
-          <View>
+          {/* <View>
             <RetrievedBooksThumbnails data={this.state.thumbnails} />
-          </View>
+          </View> */}
           <Input_1 value={this.state.title} />
           <Input_1 value={this.state.authors} />
         </View>
