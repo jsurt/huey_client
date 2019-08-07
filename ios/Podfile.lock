@@ -1,6 +1,6 @@
 PODS:
   - boost-for-react-native (1.63.0)
-  - Crashlytics (3.13.3):
+  - Crashlytics (3.13.4):
     - Fabric (~> 1.10.2)
   - DoubleConversion (1.1.6)
   - Fabric (1.10.2)
@@ -212,8 +212,8 @@ DEPENDENCIES:
   - React-RCTText (from `../node_modules/react-native/Libraries/Text`)
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-RCTWebSocket (from `../node_modules/react-native/Libraries/WebSocket`)
-  - "RNCAsyncStorage (from `/Users/geoffreysurtees/Desktop/projects/huey-playground/huey_client/node_modules/@react-native-community/async-storage`)"
-  - RNFirebase (from `/Users/geoffreysurtees/Desktop/projects/huey-playground/huey_client/node_modules/react-native-firebase/ios`)
+  - "RNCAsyncStorage (from `/Users/grsair/Desktop/projects/huey-playground/huey_client/node_modules/@react-native-community/async-storage`)"
+  - RNFirebase (from `/Users/grsair/Desktop/projects/huey-playground/huey_client/node_modules/react-native-firebase/ios`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNGoogleSignin (from `../node_modules/react-native-google-signin`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -282,9 +282,9 @@ EXTERNAL SOURCES:
   React-RCTWebSocket:
     :path: "../node_modules/react-native/Libraries/WebSocket"
   RNCAsyncStorage:
-    :path: "/Users/geoffreysurtees/Desktop/projects/huey-playground/huey_client/node_modules/@react-native-community/async-storage"
+    :path: "/Users/grsair/Desktop/projects/huey-playground/huey_client/node_modules/@react-native-community/async-storage"
   RNFirebase:
-    :path: "/Users/geoffreysurtees/Desktop/projects/huey-playground/huey_client/node_modules/react-native-firebase/ios"
+    :path: "/Users/grsair/Desktop/projects/huey-playground/huey_client/node_modules/react-native-firebase/ios"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNGoogleSignin:
@@ -294,7 +294,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
-  Crashlytics: 2aa08cd61fb1d62718c4e653169461d1d7377de2
+  Crashlytics: 2dfd686bcb918dc10ee0e76f7f853fe42c7bd552
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   Firebase: 9445469655a98e9010737f4bc4720e5bda465873
@@ -338,4 +338,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 60314b4bd1e6a098a69e891759e715630b3179c6
 
-COCOAPODS: 1.7.3
+COCOAPODS: 1.7.5
